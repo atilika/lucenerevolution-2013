@@ -47,7 +47,7 @@ public class FrenchSynonymAnalyzer extends Analyzer {
         final SolrSynonymParser parser = new SolrSynonymParser(
             true, // Remove duplicates
             true, // Expand 
-            new WhitespaceAnalyzer(Version.LUCENE_42) // Analyzer to use for parsing synonym entries
+            new WhitespaceAnalyzer(matchVersion) // Analyzer to use for parsing synonym entries
         );
 
         parser.add(synonyms);
@@ -55,11 +55,16 @@ public class FrenchSynonymAnalyzer extends Analyzer {
     }
 
     @Override
-    protected Analyzer.TokenStreamComponents createComponents(String fieldName, Reader reader) {
+    protected TokenStreamComponents createComponents(String fieldName, Reader reader) {
+
+        // Set up Tokenizer
         final Tokenizer source = new StandardTokenizer(matchVersion, reader);
-        TokenStream result = new LowerCaseFilter(matchVersion, source);
-        result = new SynonymFilter(result, synonymMap, false); // Synonyms
-        result = new FrenchLightStemFilter(result);
+
+        // Add filters
+        TokenStream result = new LowerCaseFilter(matchVersion, source); // Lowercase
+        result = new SynonymFilter(result, synonymMap, false);          // Synonyms
+        result = new FrenchLightStemFilter(result);                     // Stemming
+
         return new TokenStreamComponents(source, result);
     }
 }

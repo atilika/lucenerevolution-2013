@@ -26,7 +26,7 @@ public class AnalyzerPrinter {
 
     public void printTerms(Analyzer analyzer, String text) throws IOException {
         // Create token stream from reader
-        TokenStream stream = analyzer.tokenStream("dummy", new StringReader(text));
+        TokenStream stream = analyzer.tokenStream("dummyField", new StringReader(text));
 
         // Reset stream before token consumption
         stream.reset();
