@@ -30,8 +30,8 @@ public class FrenchSynonymExampleTest {
         String synonyms =
             "# This is a comment and empty lines are ignored)\n" +
             "\n" +
-            "appellation d'origine contrôlée => doc\n" + // mapping
-            "champagne, sparkling wine"; // equivalent
+            "appellation d'origine contrôlée, doc\n" +  // equivalence
+            "sparkling wine => champagne";              // mapping
 
         FrenchSynonymAnalyzer frenchSynonymAnalyzer = new FrenchSynonymAnalyzer(
             Version.LUCENE_42, new StringReader(synonyms));
