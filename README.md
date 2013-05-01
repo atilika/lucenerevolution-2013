@@ -17,7 +17,7 @@ lucene-analyzer-example
 The Lucene analyzer example consists of two demos,
 AnalyzerExampleTest and FrenchSynonymExampleTest.
 
-Run moth demos with mvn test.
+Run both demos with mvn test.
 
   $ cd lucene-analyzer-example
   $ mvn test
