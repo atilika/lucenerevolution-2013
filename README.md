@@ -1,5 +1,5 @@
-linguistics-demo
-================
+Lucene Revolution 2013 - linguistics-demo
+=========================================
 
 Demo examples for linguistics in Lucene and Solr
 
@@ -20,6 +20,7 @@ AnalyzerExampleTest and FrenchSynonymExampleTest.
 Run both demos with mvn test.
 
   $ cd lucene-analyzer-example
+
   $ mvn test
 
 The demos can be run individually as well. For example:
@@ -37,6 +38,7 @@ as well as part-of-speech tagging.
 Execute the following commands to run the examples.
 
   $ cd opennlp-example
+
   $ mvn -Dget-models test
 
 
