@@ -30,6 +30,16 @@ The demos can be run individually as well. For example:
 opennlp-example
 ---------------
 
+The OpenNLP example consists of examples demonstrating 
+sentence segmentation, tokenization, person name extraction 
+as well as part-of-speech tagging.
+
+Execute the following commands to run the examples.
+
+  $ cd opennlp-example
+  $ mvn -Dget-models test
+
 
 solr-multilang-example
 ----------------------
+
