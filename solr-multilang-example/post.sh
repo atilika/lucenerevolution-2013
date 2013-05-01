@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-source_dir=wikidocs
+source_dir=docs
 solr_url="http://localhost:8983/solr"
 
 if [ -z "$1" ]; then
